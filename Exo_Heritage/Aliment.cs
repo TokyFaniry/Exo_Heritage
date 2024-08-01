@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exo_Heritage
+﻿namespace Exo_Heritage
 {
-    internal  class  Aliment
-    {
-      public  int ApportEnegetique;
-       
-      public int GetApportEnergetique()
+    internal class Aliment
+    {   
+        public int ApportEnegetique;
+        public string NomAliment;
+
+        public int GetApportEnergetique()
         {
             return this.ApportEnegetique;
         }
-      
-      public virtual void SetApportEnergetique()
+
+        public virtual void SetApportEnergetique()
         {
-            this.ApportEnegetique=0;
+            this.ApportEnegetique = 0;
         }
-      
-      
+        public virtual void SetNomAliment()
+        {
+            this.NomAliment = "Just aliment";
+        }
+
+
     }
-}
+ }

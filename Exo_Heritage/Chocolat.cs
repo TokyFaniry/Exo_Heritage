@@ -13,8 +13,18 @@ namespace Exo_Heritage
             base.SetApportEnergetique();
             this.ApportEnegetique = 5;
         }
+
+        public override void SetNomAliment()
+        {
+            base.SetNomAliment();
+            this.NomAliment = "Chocolat";
+        }
+
         public Chocolat() {
             this.SetApportEnergetique();
+            this.SetNomAliment();
         }
+
+
     }
 }

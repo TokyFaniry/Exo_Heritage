@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 
 namespace Exo_Heritage
 {
@@ -30,13 +27,17 @@ namespace Exo_Heritage
         public void Marcher(int kilometre)
         {
             Console.WriteLine("Marche.....");
+
             int NewEnergie;
-            for (int i = 0; i <= kilometre; i++)
+            int i;
+
+            for ( i = 1; i < kilometre; i++)
             {
                 NewEnergie = this.NiveauEnergie - 5;
+
                 if (NewEnergie < 0)
                 {
-                    Console.WriteLine("Plus d'energie");
+                    Console.WriteLine("Oooooohhhh.....Plus d'energie , manger des aliments pour recuperer des energies");
                     break;
                 }
                 else
@@ -44,25 +45,53 @@ namespace Exo_Heritage
                     setNiveauEnergie(NewEnergie);
                 }
             }
+            Console.WriteLine("Marche de " + i + "Km fait");
+
+            Console.WriteLine("Niveau Energie: " + this.getNiveauEnergie());
+        }
+        public void Courir(int kilometre)
+        {
+            Console.WriteLine("Vitee.....");
+
+            int NewEnergie;
+            int i;
+
+            for (i = 1; i < kilometre; i++)
+            {
+                NewEnergie = this.NiveauEnergie - 5;
+
+                if (NewEnergie < 0)
+                {
+                    Console.WriteLine("Oooooohhhh.....Plus d'energie , manger des aliments pour recuperer des energies");
+                    break;
+                }
+                else
+                {
+                    setNiveauEnergie(NewEnergie);
+                }
+            }
+            Console.WriteLine("T'as couru " + i + "Km ");
+
             Console.WriteLine("Niveau Energie: " + this.getNiveauEnergie());
         }
 
-        public void Manger(Aliment aliment,int quantite)
+        public void Manger(Aliment aliment, int quantite)
         {
-            Console.WriteLine("En train de manger........");
+            Console.WriteLine("En train de manger du " + aliment.NomAliment + "........");
             int NewEnergie;
-
-            NewEnergie = this.NiveauEnergie + (aliment.ApportEnegetique*quantite);
+         
+            NewEnergie = this.NiveauEnergie + (aliment.ApportEnegetique * quantite);
 
             setNiveauEnergie(NewEnergie);
 
             Console.WriteLine("Niveau Energie: " + this.getNiveauEnergie());
-            
+
         }
+
 
         public void Afficher()
         {
-            Console.WriteLine("Nom: "+this.Nom);
+            Console.WriteLine("Nom: " + this.Nom);
             Console.WriteLine("Prenom: " + this.Prenom);
             Console.WriteLine("Niveau d'enrgie: " + this.getNiveauEnergie());
 
