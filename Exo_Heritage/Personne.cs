@@ -58,7 +58,7 @@ namespace Exo_Heritage
 
             for (i = 1; i < kilometre; i++)
             {
-                NewEnergie = this.NiveauEnergie - 5;
+                NewEnergie = this.NiveauEnergie - 10;
 
                 if (NewEnergie < 0)
                 {
